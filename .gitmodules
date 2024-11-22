@@ -4,3 +4,6 @@
 [submodule "sway-client"]
 	path = sway-client
 	url = https://github.com/ishantSikdar/sway-client
+[submodule "sway-server"]
+	path = sway-server
+	url = https://github.com/ishantSikdar/sway-server
