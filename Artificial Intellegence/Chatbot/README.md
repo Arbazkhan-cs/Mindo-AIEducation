@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+# Mindo AI Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Mindo AI Chatbot](https://api.placeholder.com/600/200)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Mindo AI Chatbot is a modern, responsive web application that leverages the Groq API with the DeepSeek language model to provide intelligent conversational interactions. This React-based application features a sleek, intuitive interface with both light and dark themes, making it accessible and pleasant to use on any device.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **AI-Powered Conversations**: Integrates with Groq's API using DeepSeek's LLM for intelligent responses
+- **Thoughtful AI**: Configured to think step-by-step before answering questions
+- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
+- **Dark/Light Theme**: Toggle between themes with preferences saved to local storage
+- **Mobile-Optimized**: Side menu provides easy access to settings on smaller screens
+- **Real-Time Feedback**: Visual "thinking" indicator shows when the AI is processing
+- **Clean UI**: Modern interface with animated message transitions
+- **Secure API Key Handling**: Input for your Groq API key with masked field for security
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+[View Live Demo](#) (Replace with your deployed application URL)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+### Desktop View - Light Theme
+![Desktop Light Theme](https://api.placeholder.com/800/450)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Mobile View - Dark Theme
+![Mobile Dark Theme](https://api.placeholder.com/300/600)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: React.js
+- **HTTP Client**: Axios
+- **API**: Groq API
+- **Language Model**: DeepSeek R1 Distill LLama 70B
+- **Styling**: Custom CSS with CSS variables for theming
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (v16 or later)
+- npm or yarn
+- Groq API key (sign up at [groq.com](https://groq.com))
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/mindo-chatbot.git
+   cd mindo-chatbot
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Create a `.env` file in the root directory (optional for default API key):
+   ```
+   REACT_APP_DEFAULT_GROQ_API_KEY=your_api_key_here
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-### Code Splitting
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. **Enter your Groq API Key**:
+   - On desktop: Enter your API key in the field at the top
+   - On mobile: Open the menu by clicking the hamburger icon (☰) and enter your API key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Start chatting**:
+   - Type your message in the input field at the bottom
+   - Press the send button or hit Enter
+   - The AI will process your message and respond
 
-### Making a Progressive Web App
+3. **Change theme**:
+   - Click the theme toggle button (🌙/☀️) in the header
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Clear chat history**:
+   - On mobile: Open the menu and click "Clear Chat"
+   - On desktop: [Feature to be added]
 
-### Advanced Configuration
+## API Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application uses the DeepSeek R1 Distill LLama 70B model through Groq's API. The default configuration includes:
 
-### Deployment
+- **Model**: `deepseek-r1-distill-llama-70b`
+- **Temperature**: 0.7 (balances creativity and coherence)
+- **Max Tokens**: 1024 (maximum response length)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To customize these settings, modify the `sendMessage` function in `App.js`.
 
-### `npm run build` fails to minify
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Changing Colors
+
+The application uses CSS variables for theming. To change the color scheme, modify the variables in `App.css`:
+
+```css
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  /* other variables */
+}
+```
+
+### Adding Features
+
+Some ideas for extending the application:
+
+- Voice input and output
+- Message history storage (localStorage or backend)
+- File attachment capabilities
+- Response formatting options (markdown, code highlighting)
+- Multiple AI models to choose from
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Groq](https://groq.com) for providing the API
+- [DeepSeek](https://deepseek.ai) for the language model
+- [React](https://reactjs.org) community for the framework and ecosystem
+
+---
+
+Created with ❤️ by Mido Developers
